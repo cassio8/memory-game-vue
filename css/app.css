@@ -1,0 +1,229 @@
+[v-cloak] { display: none }
+
+body, h1, h2, h3, h4,
+h5, h6, p, li, span, a {
+	font-family: 'Open Sans', sans-serif;
+}
+
+._text-border {
+	text-shadow: 2px 0 0 #000, 
+	-2px 0 0 #000, 
+	0 2px 0 #000, 
+	0 -2px 0 #000, 
+	1px 1px #000, 
+	-1px -1px 0 #000, 
+	1px -1px 0 #000, 
+	-1px 1px 0 #000;
+}
+
+.container {
+	position: relative;
+	margin: 30px auto 0;
+	width: 630px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 40px;
+	color: #fbd741;
+	text-align: center;
+}
+
+h2 span {
+	display: block;
+	font-size: 12px;
+	font-style: italic;
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	margin-left: -20px;
+}
+
+.card {
+	margin-bottom: 20px;
+	margin-left: 20px;
+	width: calc(20% - 20px);
+	height: 155px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 6px;
+}
+
+.card:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	border-radius: 6px;
+	transition: 400ms;
+}
+
+.card.hide:before {
+	width: 100%;
+	background-color: #000;
+	background-image: url(../images/back.jpg);
+}
+
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.popup .content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 70px;
+	width: 600px;
+	background-color: #fff;
+	border: 4px solid #000;
+	border-radius: 15px;
+}
+
+.popup .content h2 {
+	font-size: 70px;
+	letter-spacing: 10px;
+}
+
+.popup .content .close {
+	position: absolute;
+	right: -12px;
+	top: -16px;
+	width: 40px;
+	height: 40px;
+	font-size: 20px;
+}
+
+.popup .content .close:before {
+	height: 34px;
+}
+
+.popup .content .close:after {
+	height: 32px;
+}
+
+.Button {
+	position: relative;
+	margin: 0;
+	padding: 0;
+    width: 80px;
+    height: 80px;
+    color: #fff;
+    background-color: #ffff87;
+    font-size: 40px;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
+}
+
+.Button:before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+	height: 64px;
+	background-color: #fbce30;
+	border-radius: 50%;
+	opacity: 0.8;
+	z-index: 0;
+}
+
+.Button:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 60%;
+	transform: translateX(-50%);
+	height: 42px;
+	background-color: #fff;
+	border-radius: 15px;
+	opacity: 0.4;
+	z-index: 0;
+}
+
+.Button:hover {
+	background-color: #ffff87;
+	opacity: 0.8;
+}
+
+.Button span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+}
+
+a.Button {
+	line-height: 46px;
+}
+
+.play {
+	position: fixed;
+	top: 200px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.play span {
+	left: 54%;
+}
+
+.git {
+	position: fixed;
+	bottom: 30px;
+	right: 20px;
+	width: 40px;
+	height: 40px;
+	font-size: 26px;
+}
+
+.git:before {
+	height: 90%;
+}
+
+.git:after {
+	height: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+	.container {
+		width: 90%;
+	}
+
+	.cards {
+		margin-left: -10px;
+	}
+
+	.card {
+		margin-bottom: 10px;
+		margin-left: 10px;
+		padding-top: 26%;
+		width: calc(20% - 10px);
+		height: auto;
+	}
+
+	.popup .content {
+		padding: 40px;
+		width: 90%;
+	}
+
+	.popup .content h2 {
+		font-size: 40px;
+	}
+}

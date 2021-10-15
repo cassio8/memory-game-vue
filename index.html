@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jogo da Memória</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="fonts/fontello/css/fontello.css">
+	<link rel="stylesheet" href="css/monalisa.min.css">
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+	<div id="app" v-cloak>
+		<div class="container">
+			<h2 class="_text-border">Jogo da memória <span>Games</span></h2>
+		</div>
+
+		<div v-bind:class="{ _hide: play == false }">
+			<div class="container">
+				<div class="cards">
+					<div v-bind:class="{ card, hide: card.hide }" v-for="(card, index) in cards" :style="{ backgroundImage: 'url(' + card.url + ')' }" @click="selectCard(index)"></div>
+				</div>
+			</div>
+		</div>
+
+		<a href="#" class="Button _text-border play" v-bind:class="{ _hide: play == true }" @click="play = true"><span><i class="icon-play"></i></span></a>
+
+		<div class="popup" v-bind:class="{ _hide: popup == false }">
+			<div class="content">
+				<a href="#" class="Button _text-border close" @click="popup = false"><span>&#x2715;</span></a>
+				<h2 class="_text-border">Vitória</h2>
+				<div class="_tac">
+					<a href="#" class="Button _text-border" @click="reset"><span><i class="icon-reset"></i></span></a>
+				</div>
+			</div>
+		</div>
+
+		<a href="https://github.com/cassio8?tab=repositories" class="Button _text-border git" target="_blank"><span><i class="icon-github-circled"></i></span></a>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/cards.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
