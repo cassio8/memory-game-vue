@@ -102,10 +102,10 @@ var app = new Vue({
 			}
 
 			this.ids_jogada = [];
+			this.count      = 0;
+			this.popup      = false;
 
 			this.shuffle(this.cards);
-
-			this.popup = false;
 		}
 	}
 });
